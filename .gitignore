@@ -1,0 +1,16 @@
+.DS_Store
+*.log
+node_modules/
+dist/
+build/
+.firebase/
+.firebaserc
+firebase-debug.log
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+.env
+.env.local
+firebase-config.js
