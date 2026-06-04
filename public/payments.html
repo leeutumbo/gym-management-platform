@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamentos - Plataforma de Gestão de Ginásios</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">💪 Gym Manager</div>
+        <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
+        <ul class="nav-menu">
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="students.html">Alunos</a></li>
+          <li><a href="plans.html">Planos</a></li>
+          <li><a href="payments.html">Pagamentos</a></li>
+        </ul>
+        <div class="user-menu">
+          <div class="user-info">
+            <span id="userEmail">Usuário</span>
+          </div>
+          <button class="logout-btn" onclick="logout()">Sair</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <ul class="sidebar-menu">
+      <li><a href="dashboard.html">📊 Dashboard</a></li>
+      <li><a href="students.html">👥 Alunos</a></li>
+      <li><a href="plans.html">📋 Planos</a></li>
+      <li><a href="payments.html" class="active">💳 Pagamentos</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <div class="content">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+          <h1>Registro de Pagamentos</h1>
+          <button class="btn btn-primary" onclick="openPaymentModal()">➕ Novo Pagamento</button>
+        </div>
+        
+        <!-- Tabela de Pagamentos -->
+        <div class="card">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Aluno</th>
+                <th>Plano</th>
+                <th>Valor</th>
+                <th>Data</th>
+                <th>Status</th>
+                <th>Método</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="paymentsList">
+              <tr>
+                <td colspan="7" class="text-center">Carregando...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal - Adicionar/Editar Pagamento -->
+  <div id="paymentModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="paymentModalTitle">Registrar Novo Pagamento</h2>
+        <button class="modal-close" onclick="closeModal('paymentModal')">✕</button>
+      </div>
+      
+      <form id="paymentForm">
+        <div class="form-group">
+          <label for="paymentStudent">Aluno *</label>
+          <select id="paymentStudent" name="student" required>
+            <option value="">Selecione um aluno</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="paymentPlan">Plano *</label>
+          <input type="text" id="paymentPlan" name="plan" placeholder="Ex: Plano Básico" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="paymentAmount">Valor (R$) *</label>
+          <input type="number" id="paymentAmount" name="amount" placeholder="0.00" step="0.01" min="0" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="paymentMethod">Método de Pagamento *</label>
+          <select id="paymentMethod" name="method" required>
+            <option value="">Selecione</option>
+            <option value="dinheiro">Dinheiro</option>
+            <option value="cartao-credito">Cartão de Crédito</option>
+            <option value="cartao-debito">Cartão de Débito</option>
+            <option value="transferencia">Transferência</option>
+            <option value="cheque">Cheque</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="paymentDate">Data do Pagamento *</label>
+          <input type="date" id="paymentDate" name="date" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="paymentStatus">Status</label>
+          <select id="paymentStatus" name="status" required>
+            <option value="pago">Pago</option>
+            <option value="pendente">Pendente</option>
+          </select>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="closeModal('paymentModal')">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Plataforma de Gestão de Ginásios. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
+  
+  <!-- Scripts da aplicação -->
+  <script src="js/firebase-config.js"></script>
+  <script src="js/helpers.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/payments.js"></script>
+</body>
+</html>
