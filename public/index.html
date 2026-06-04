@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataforma de Gestão de Ginásios</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .hero {
+      background: linear-gradient(135deg, #004e89 0%, #1b7aa6 100%);
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      color: white;
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+    }
+    
+    .hero p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .cta-btn {
+      background-color: #ff6b35;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    
+    .cta-btn:hover {
+      background-color: #e55a2b;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">💪 Gym Manager</div>
+        <ul class="nav-menu">
+          <li><a href="#features">Recursos</a></li>
+          <li><a href="#about">Sobre</a></li>
+        </ul>
+        <div class="user-menu">
+          <a href="login.html" class="btn btn-primary">Entrar</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>💪 Gym Manager</h1>
+      <p>Plataforma inteligente para gestão completa de ginásios</p>
+      <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">Substitua controles manuais em papel por um sistema digital eficiente</p>
+      <a href="login.html" class="cta-btn">Acessar Plataforma</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <main>
+    <div class="container">
+      <section id="features" style="padding: 3rem 0;">
+        <h2 style="text-align: center; margin-bottom: 2rem;">✨ Recursos Principais</h2>
+        <div class="grid grid-3">
+          <div class="card">
+            <h3>👥 Gestão de Alunos</h3>
+            <p>Cadastre, atualize e gerencie informações de todos os seus alunos de forma centralizada.</p>
+          </div>
+          <div class="card">
+            <h3>📋 Planos Flexíveis</h3>
+            <p>Crie planos customizados com diferentes valores e durações para atender suas necessidades.</p>
+          </div>
+          <div class="card">
+            <h3>💳 Registro de Pagamentos</h3>
+            <p>Controle completo de pagamentos com histórico, status e múltiplos métodos.</p>
+          </div>
+          <div class="card">
+            <h3>⏰ Controle de Vencimentos</h3>
+            <p>Alertas automáticos de vencimentos próximos e relatório de inadimplências.</p>
+          </div>
+          <div class="card">
+            <h3>📊 Dashboard Inteligente</h3>
+            <p>Indicadores financeiros e operacionais em tempo real com gráficos visuais.</p>
+          </div>
+          <div class="card">
+            <h3>🔐 Autenticação Segura</h3>
+            <p>Acesso protegido por autenticação com email e senha para administradores.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" style="padding: 3rem 0; background-color: #f8f9fa; margin: 3rem -15px; padding: 3rem 15px;">
+        <h2 style="text-align: center; margin-bottom: 2rem;">Sobre a Plataforma</h2>
+        <div class="grid grid-2" style="gap: 3rem;">
+          <div>
+            <h3>Por que digitalizar?</h3>
+            <ul style="list-style: none;">
+              <li>✅ Reduz erros administrativos</li>
+              <li>✅ Economiza tempo na gestão</li>
+              <li>✅ Fornece relatórios claros</li>
+              <li>✅ Facilita tomada de decisão</li>
+              <li>✅ Melhora experiência do cliente</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Tecnologia</h3>
+            <p>Desenvolvida com as tecnologias mais modernas:</p>
+            <ul style="list-style: none;">
+              <li>🌐 HTML5 + CSS3 Responsivo</li>
+              <li>⚡ JavaScript Vanilla</li>
+              <li>🔥 Firebase (Backend)</li>
+              <li>☁️ Hospedagem em Cloud</li>
+              <li>📱 Mobile-First Design</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Plataforma de Gestão de Ginásios. Todos os direitos reservados.</p>
+    <p>Para suporte ou dúvidas, entre em contato com o desenvolvedor.</p>
+  </footer>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
+  
+  <!-- Scripts da aplicação -->
+  <script src="js/firebase-config.js"></script>
+  <script src="js/helpers.js"></script>
+</body>
+</html>
